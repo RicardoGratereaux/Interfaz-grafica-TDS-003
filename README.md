@@ -1,6 +1,6 @@
 # Interfaz-grafica-TDS-003
 
-Ricardo Gratereaux Báez 
+Ricardo Gratereaux Báez
 2021-0326
 
 Luiggi Rafael Reyes Santos
