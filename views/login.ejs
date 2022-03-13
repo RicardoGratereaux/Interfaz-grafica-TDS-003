@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es" >
+<head>
+  <meta charset="UTF-8">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
+  <link rel="stylesheet" href="resources/css/styles.css">
+</head>
+<body>
+
+<div class="container" id="container">
+
+	<div class="form-container sign-up-container">
+		<form action="/login" method="POST">
+			<h1> Crear Cuenta </h1>
+			<input type="text" name="name" placeholder="Nombre completo" required />
+			<input type="text" name="email" placeholder="Usuario" required/>
+			<input type="password" name="pass" placeholder="Contraseña" required/>
+			<button class="light"> Registrarse </button>
+		</form>
+	</div>
+
+	<div class="form-container sign-in-container">
+		<form action="/auth" method="POST">
+			<h1> Iniciar Sesión </h1>
+			<input type="text" name="login1" placeholder="Usuario" required/>
+			<input type="password" name="pass1" placeholder="Contraseña" required/>
+			<button class="light"> Inicia sesión </button>
+		</form>
+	</div>
+
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1> Bienvenido de vuelta! </h1>
+				<p> Para mantenerte conectados con nosotros inicia sesión </p>
+				<button class="ghost" id="signIn"> Inicia sesión </button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1> Hola amigo! </h1>
+				<p> Ingrese sus datos personales para y empieze la aventura con nosotros! </p>
+				<button class="ghost" id="signUp"> Registrese </button>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<script  src='resources/css/script.js'></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<% if(typeof alert != 'undefined') { %>
+	<script>
+		Swal.fire({
+			title: '<%= alertTitle %>',
+			text: '<%= alertMessage %>',
+			icon: '<%= alertIcon %>',
+			showConfirmButtom: '<%= showConfirmButtom %>',
+			timer: '<%= timer %>'
+		}).then(() => {
+		window.location = '/<% ruta %>'
+	})
+	</script>
+<% } %>
+
+</body>
+</html>
